@@ -89,12 +89,12 @@
                                     {{ $p->stock }}
                                 </td>
                                 <td class="px-4 py-3 text-center space-x-2">
-                                    <a href="{{ route('admin.products.edit', $p->id) }}" 
+                                    <a href="{{ route('admin.stocks.edit', $p->id) }}" 
                                        class="inline-flex items-center gap-1 bg-yellow-500 hover:bg-yellow-600 
                                               text-white px-3 py-1.5 rounded-xl shadow-sm font-semibold transition">
                                         ✏️ Edit
                                     </a>
-                                    <form action="{{ route('admin.products.destroy', $p->id) }}" method="POST" 
+                                    <form action="{{ route('admin.stocks.destroy', $p->id) }}" method="POST" 
                                           onsubmit="return confirm('Yakin ingin menghapus produk ini?')" class="inline-block">
                                         @csrf
                                         @method('DELETE')
