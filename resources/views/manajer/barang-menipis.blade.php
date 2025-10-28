@@ -49,8 +49,16 @@
                                     <td class="text-start">{{ $p->name }}</td>
                                     <td>{{ $p->category->name ?? '-' }}</td>
                                     <td>{{ $p->supplier->name ?? '-' }}</td>
-                                    <td class="fw-bold text-danger">{{ $p->stock }}</td>
-                                    <td><span class="badge bg-danger">Menipis</span></td>
+                                    <td class="fw-bold {{ $p->stock == 0 ? 'text-secondary' : 'text-danger' }}">
+                                        {{ $p->stock }}
+                                    </td>
+                                    <td>
+                                        @if($p->stock == 0)
+                                            <span class="badge bg-secondary">Habis</span>
+                                        @else
+                                            <span class="badge bg-danger">Menipis</span>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
